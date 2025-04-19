@@ -7,7 +7,6 @@ sales = pd.read_csv('sales.csv')
 # Merge the data on 'sku'
 merged = pd.merge(products, sales, on='sku')
 
-# Create an empty list to store results
 results = []
 
 for _, row in merged.iterrows():
@@ -31,20 +30,15 @@ for _, row in merged.iterrows():
     if new_price < minimum_allowed_price:
         new_price = minimum_allowed_price
 
-    # Round to 2 decimal places
     new_price = round(new_price, 2)
 
-    # Append formatted prices with INR
     results.append({
         'sku': sku,
         'old_price': f"{round(current_price, 2)} INR",
         'new_price': f"{new_price:.2f} INR"
     })
 
-# Create output DataFrame
 output_df = pd.DataFrame(results)
-
-# Save to CSV
 output_df.to_csv('updated_prices.csv', index=False)
 
 print("✅ updated_prices.csv has been created!")
