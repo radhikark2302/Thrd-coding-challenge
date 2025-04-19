@@ -11,7 +11,7 @@ A pricing engine that adjusts product prices based on:
 ---
 
 ## 📂 **Files**
-- **`products.csv`**: Contains SKU, current price, cost price, and stock.
+- **`products.csv`**: Contains SKU (Stock Keeping Unit), current price, cost price, and stock.
 - **`sales.csv`**: Contains SKU and quantity sold for the last 30 days.
 - **`updated_prices.csv`**: Generated file with the old and new prices after applying the business rules.
 
@@ -40,7 +40,10 @@ A pricing engine that adjusts product prices based on:
 ## 💻 **How to Run**
 1. Clone this repository to your local machine.
 2. Place your `products.csv` and `sales.csv` files in the root folder of the project.
-3. Install any required dependencies (if any) using `pip install -r requirements.txt`.
+3. Install the required library:
+```bash
+pip install pandas
+```
 4. Run the script to update prices:
 ```bash
 python update_prices.py
